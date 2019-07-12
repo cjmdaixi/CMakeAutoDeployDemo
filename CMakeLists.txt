@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1)
+﻿cmake_minimum_required(VERSION 3.1)
 
 project(CMakeAutoDeployDemo LANGUAGES CXX)
 
@@ -26,7 +26,7 @@ elseif(WIN32)
     add_executable(${PROJECT_NAME} WIN32 "main.cpp" "qml.qrc")
     add_custom_command(TARGET ${PROJECT_NAME}
         POST_BUILD
-        COMMAND ${DEPLOYQT_EXECUTABLE} "$<TARGET_BUNDLE_DIR:${PROJECT_NAME}>"
+        COMMAND ${DEPLOYQT_EXECUTABLE} "$<TARGET_FILE:${PROJECT_NAME}>"
             --$<LOWER_CASE:$<CONFIG>> --qmldir ${CMAKE_SOURCE_DIR}
     )
 endif()
