@@ -1,1 +1,4 @@
-CMakeLists.txt
+CMakeLists.txt.user
+.vscode
+build*
+.DS_Store
